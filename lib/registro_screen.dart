@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class RegistroScreen extends StatelessWidget {
 
   final TextEditingController txtUser = TextEditingController();
   final TextEditingController txtPassword = TextEditingController();
@@ -11,46 +11,56 @@ class LoginScreen extends StatelessWidget {
         onWillPop: () async => false,
         child: Scaffold(
             backgroundColor: Colors.blue,
-            body: Center(
-              child: ListView(
-                shrinkWrap: true,
-                padding: const EdgeInsets.only(top: 15, bottom: 30),
-                children: [
-                  Container(
-                    height: 100,
-                    margin: const EdgeInsets.only(left: 110, right: 110),
-                    color: Colors.white,
-                    child: const Center(child: Text('Logo')),
-                  ),
-                  /*const Image(
-                      width: 200,
-                      height: 100,
-                      image: AssetImage('assets/images/mh.png')
-                  ),*/
-                  InputField(txtUser, 'Usuario', false),
-                  InputField(txtPassword, 'Contraseña', true),
-                  Container(
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.only(top: 20),
-                    child: const Text('Olvidé mi contraseña',
-                      style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontStyle: FontStyle.italic
-                      ),
+            body: ListView(
+              padding: const EdgeInsets.only(top: 30, bottom: 30),
+              children: [
+                Container(
+                  height: 100,
+                  margin: const EdgeInsets.only(left: 110, right: 110, top: 100),
+                  color: Colors.white,
+                  child: const Center(child: Text('Logo')),
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  margin: const EdgeInsets.only(top: 20),
+                  child: const Text('Registro',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 110, right: 110, top: 100),
-                    height: 50,
-                    child: Boton(() {
-                        //Navigator.pushNamed(context, '/home');
-                    }),
+                ),
+                /*const Image(
+                    width: 200,
+                    height: 100,
+                    image: AssetImage('assets/images/mh.png')
+                ),*/
+                InputField(txtUser, 'Nombre completo', false),
+                InputField(txtUser, 'Teléfono', false),
+                InputField(txtUser, 'Fecha de nacimiento', false),
+                InputField(txtUser, 'Usuario', false),
+                InputField(txtPassword, 'Contraseña', true),
+                Container(
+                  alignment: Alignment.center,
+                  margin: const EdgeInsets.only(top: 20),
+                  child: const Text('Ya tengo una cuenta',
+                    style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontStyle: FontStyle.italic
+                    ),
                   ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(left: 110, right: 110, top: 50, bottom: 50),
+                  height: 50,
+                  child: Boton(() {
+                    //Navigator.pushNamed(context, '/home');
+                  }),
+                ),
 
-                ],
-              ),
+              ],
             )
         )
     );
@@ -101,7 +111,7 @@ class LoginScreen extends StatelessWidget {
             )
         ),
       ),
-      child: const Text('INGRESAR',
+      child: const Text('REGISTRARSE',
         style: TextStyle(
             color: Colors.blue,
             fontSize: 18,
