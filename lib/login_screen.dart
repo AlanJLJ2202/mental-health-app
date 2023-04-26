@@ -10,7 +10,7 @@ class LoginScreen extends StatelessWidget {
     return WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.deepPurple,
             body: Center(
               child: ListView(
                 shrinkWrap: true,
@@ -18,9 +18,10 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Container(
                     height: 100,
-                    margin: const EdgeInsets.only(left: 110, right: 110),
-                    color: Colors.white,
-                    child: const Center(child: Text('Logo')),
+                    margin: const EdgeInsets.only(left: 50, right: 50),
+                    child: const Center(
+                        child: Text('Mental health app', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w200, fontSize: 35),)
+                    ),
                   ),
                   /*const Image(
                       width: 200,
@@ -103,7 +104,7 @@ class LoginScreen extends StatelessWidget {
       ),
       child: const Text('INGRESAR',
         style: TextStyle(
-            color: Colors.blue,
+            color: Colors.deepPurple,
             fontSize: 18,
             fontWeight: FontWeight.bold
         ),

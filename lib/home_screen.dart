@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
     return WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
-            backgroundColor: Colors.grey[400],
+            backgroundColor: Colors.deepPurple[200],
             appBar: AppBar(
               title: const Text('Mental health app'),
               actions: [
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(top: 70),
                   height: 50,
-                  child: Center(child: Text('¡Bienvenido, usuario!')),
+                  child: Center(child: Text('¡Bienvenido, usuario!', style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w200),)),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 100),
@@ -40,13 +40,13 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
-                        height: 50,
+                        height: 100,
                         child: Boton(() {
                           //Navigator.pushNamed(context, '/home');
-                        }, Colors.green, 'Mi Expediente', 100),
+                        }, Colors.green, '      Mi Expediente      ', 100),
                       ),
                       Container(
-                        height: 50,
+                        height: 100,
                         child: Boton(() {
                           //Navigator.pushNamed(context, '/home');
                         }, Colors.blue, 'Información', 200),
@@ -54,7 +54,34 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                Container(
+                  margin: EdgeInsets.only(top: 50),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        height: 100,
+                        child: Boton(() {
+                          //Navigator.pushNamed(context, '/home');
+                        }, Colors.orange, 'Diagnóstico', 100),
+                      ),
+                      Container(
+                        height: 100,
+                        child: Boton(() {
+                          //Navigator.pushNamed(context, '/home');
+                        }, Colors.redAccent, 'Cómo me siento hoy', 200),
+                      ),
+                    ],
+                  ),
+                ),
 
+                Container(
+                  margin: EdgeInsets.only(top: 100, left: 50, right: 50),
+                  height: 75,
+                  child: Boton(() {
+                    //Navigator.pushNamed(context, '/home');
+                  }, Colors.white, 'Ayuda y consejos', 50, Colors.purple),
+                ),
 
               ],
             )
@@ -67,7 +94,6 @@ class HomeScreen extends StatelessWidget {
       bool isPass) {
     return Container(
       height: 55,
-      margin: const EdgeInsets.only(left: 30, right: 30, top: 40),
       child: TextField(
         textAlign: TextAlign.center,
         obscureText: isPass,
@@ -94,7 +120,7 @@ class HomeScreen extends StatelessWidget {
   }
 
 
-  Widget Boton(Function() funcion, Color color, String texto, double alto) {
+  Widget Boton(Function() funcion, Color color, String texto, double alto, [Color color_letra = Colors.white]) {
     return Container(
       child: ElevatedButton(
         onPressed: funcion,
@@ -109,8 +135,8 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         child: Text(texto,
-          style: const TextStyle(
-              color: Colors.white,
+          style: TextStyle(
+              color: color_letra,
               fontSize: 18,
               fontWeight: FontWeight.bold
           ),

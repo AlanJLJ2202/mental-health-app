@@ -10,19 +10,20 @@ class RegistroScreen extends StatelessWidget {
     return WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.deepPurple,
             body: ListView(
-              padding: const EdgeInsets.only(top: 30, bottom: 30),
+              padding: const EdgeInsets.only(top: 80, bottom: 30),
               children: [
                 Container(
                   height: 100,
-                  margin: const EdgeInsets.only(left: 110, right: 110, top: 100),
-                  color: Colors.white,
-                  child: const Center(child: Text('Logo')),
+                  margin: const EdgeInsets.only(left: 50, right: 50),
+                  child: const Center(
+                      child: Text('Mental health app', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w200, fontSize: 35),)
+                  ),
                 ),
                 Container(
                   alignment: Alignment.center,
-                  margin: const EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.only(top: 10),
                   child: const Text('Registro',
                     style: TextStyle(
                         color: Colors.white,
@@ -113,7 +114,7 @@ class RegistroScreen extends StatelessWidget {
       ),
       child: const Text('REGISTRARSE',
         style: TextStyle(
-            color: Colors.blue,
+            color: Colors.deepPurple,
             fontSize: 18,
             fontWeight: FontWeight.bold
         ),
